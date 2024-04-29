@@ -6,11 +6,47 @@
 /*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:22:41 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/04/29 18:04:12 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:07:34 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_base_size(long unsigned int n, int base_len)
+{
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n)
+	{
+		n = n / base_len;
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_itoa_base(long unsigned int n, int base_len, char *base)
+{
+	char	*str;
+	int		len;
+
+	len = ft_base_size(n, base_len);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	if (n == 0)
+		str[0] = 48;
+	while (n)
+	{
+		str[len - 1] = base[n % base_len];
+		n = n / base_len;
+		len--;
+	}
+	return (str);
+}
 
 int	ft_print_format(char specifier, va_list ap)
 {
@@ -64,9 +100,9 @@ int	ft_printf(const char *str, ...)
 int	main(void)
 {
 	char	*str = "Duarte";
-	int	n = -2147483649;
+	unsigned int	n = 2147483649;
 
-	ft_printf("Hello %s your number is %d.\n", str, n);
-	printf("Hello %s your number is %d.\n", str, n);
+	ft_printf("Hello %s your number is %u.\n", str, n);
+	printf("Hello %s your number is %u.\n", str, n);
 	return (0);
 }
