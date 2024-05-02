@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_digit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:45:43 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/04/30 12:21:50 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:10:20 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_print_unsi(unsigned int n)
 	return (len);
 }
 
-int	ft_print_ptr(long unsigned int n)
+int	ft_print_ptr(void *n)
 {
 	char	*ptr;
 	int		len;
@@ -46,7 +46,7 @@ int	ft_print_ptr(long unsigned int n)
 	else
 	{
 		len = ft_print_str("0x");
-		ptr = ft_itoa_base(n, 16, "0123456789abcdef");
+		ptr = ft_itoa_base((long unsigned int)n, 16, "0123456789abcdef");
 		len += ft_print_str(ptr);
 		free (ptr);
 	}

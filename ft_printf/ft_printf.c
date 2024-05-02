@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:22:41 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/04/30 12:23:52 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:09:43 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_print_format(char specifier, va_list ap)
 	else if (specifier == 'u')
 		count += ft_print_unsi(va_arg(ap, unsigned int));
 	else if (specifier == 'p')
-		count += ft_print_ptr(va_arg(ap, long unsigned int));
+		count += ft_print_ptr(va_arg(ap, void *));
 	else if (specifier == 'x')
 		count += ft_print_hex_lo(va_arg(ap, unsigned int));
 	else if (specifier == 'X')
@@ -62,13 +62,13 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(void)
 {
 	char	*str = "Duarte";
-	long unsigned int	ptr = 12;
+	void	*ptr = "-a12";
 
-	ft_printf("Hello %s your number is %p.\n", str, &ptr);
-	printf("Hello %s your number is %p.\n", str, &ptr);
+	ft_printf("Hello %s your number is %p.\n", str, ptr);
+	printf("Hello %s your number is %p.\n", str, ptr);
 	return (0);
-}
+} */
