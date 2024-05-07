@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:22:41 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/05/02 15:09:43 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:50:47 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ int	ft_printf(const char *str, ...)
 int	main(void)
 {
 	char	*str = "Duarte";
-	void	*ptr = "-a12";
+	unsigned int nbr = 69946374;
 
-	ft_printf("Hello %s your number is %p.\n", str, ptr);
-	printf("Hello %s your number is %p.\n", str, ptr);
+	ft_printf("Hello %s your number is %x.\n", str ,nbr);
+	printf("Hello %s your number is %x.\n", str, nbr);
 	return (0);
 } */
