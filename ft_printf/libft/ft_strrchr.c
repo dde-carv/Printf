@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:23:14 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/05/07 15:41:55 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:21:10 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	len = ft_strlen(s);
 	while (len >= 0)
 	{
-		if (s[len] == c)
+		if (s[len] == (char)c)
 			return ((char *)(s + len));
 		len--;
 	}

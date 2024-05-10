@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:45:43 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/05/02 15:10:20 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/05/10 15:00:13 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,25 +53,16 @@ int	ft_print_ptr(void *n)
 	return (len);
 }
 
-int	ft_print_hex_lo(unsigned int n)
+int	ft_print_hex(unsigned int n, char specifier)
 {
 	char	*ptr;
 	int		len;
 
 	len = 0;
-	ptr = ft_itoa_base(n, 16, "0123456789abcdef");
-	len += ft_print_str(ptr);
-	free (ptr);
-	return (len);
-}
-
-int	ft_print_hex_up(unsigned int n)
-{
-	char	*ptr;
-	int		len;
-
-	len = 0;
-	ptr = ft_itoa_base(n, 16, "0123456789ABCDEF");
+	if (specifier == 'x')
+		ptr = ft_itoa_base(n, 16, "0123456789abcdef");
+	else
+		ptr = ft_itoa_base(n, 16, "0123456789ABCDEF");
 	len += ft_print_str(ptr);
 	free (ptr);
 	return (len);

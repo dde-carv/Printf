@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:14:21 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/05/07 15:37:30 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:19:23 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		if (!*lst)
 			*lst = new;
 		else
-			ft_lstlast(*lst)-> next = new;
+			ft_lstlast(*lst)->next = new;
 	}
 }
